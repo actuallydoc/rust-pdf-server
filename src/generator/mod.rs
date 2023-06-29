@@ -586,6 +586,8 @@ pub fn init(racun: &Racun, sig_path: Option<&Path>) -> Result<(), Box<dyn Error>
     let y = render_payment_footer(&current_layer, racun, &standard_font, sig_path, y);
     render_footer(&current_layer, racun, &standard_font, y);
     //Save pdf entry and return the path to the pdf file
+
+    //Check if the path exists
     let path = save_invoice(doc, racun);
 
     // match path {
@@ -635,6 +637,7 @@ pub fn save_to_json(racun: &Racun) {
     }
 }
 
+// TODO: This currently overwrites the invoice if it already exists
 pub fn save_invoice(doc: PdfDocumentReference, racun: &Racun) -> Option<(PathBuf, PathBuf)> {
     //Firstly make a new directory in the invoice directory and the name is the invoice number
     //Then save the invoice in that directory
