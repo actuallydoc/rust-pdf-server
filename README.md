@@ -12,8 +12,10 @@ $ cargo run
 ### POST /invoice - Post endpoint to create an invoice the schema of the invoice is provided below
 ### GET /invoice/:id - Get the invoice by id (the server will return a json response with the invoice data)
 
-
-
+## Upcoming features
+### - [ ] Add a database to store the invoices
+### - [ ] Add a frontend to create invoices
+### - [ ] Return a pdf file blob with the invoice json
 # Schema structure
 ### You can use the following schema to create an invoice or you can edit the schema for your application
 
